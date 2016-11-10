@@ -47,14 +47,20 @@ machine-create() {
 machine-start() {
     declare desc="starts the vm"
 
-    docker-machine start #MACHINE_NAME
+    docker-machine start $MACHINE_NAME
 }
 
 machine-check() {
    declare desc="Check the vm"
 
    debug "Check if vm is running"
-   docker-machine ls
+   local status=$(docker-machine status $MACHINE_NAME)
+   if [[ "$status" != "Running" ]]; then
+       echo "docker vm is not running! status: $status"  | red
+       echo "=====> start the VM:"
+       echo "gun machine start" | yellow
+       exit 1
+   fi
 
    debug "Check if volume sharing works"
    local localDate=$(date)
