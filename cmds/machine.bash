@@ -12,7 +12,7 @@ init() {
   env-import MACHINE_STORAGE_PATH .gun/machines
   env-import MACHINE_MEM 4096
   env-import MACHINE_CPU 2
-  env-import MACHINE_OPTS "--xhyve-experimental-nfs-share"
+  env-import MACHINE_OPTS "--xhyve-virtio-9p"
 
   deps-require docker-machine
   deps-require docker-machine-driver-xhyve

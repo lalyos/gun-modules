@@ -32,7 +32,7 @@ date | tee delme.txt && docker run -v $PWD:/data alpine cat /data/delme.txt
 
 
 ```
-echo 'export MACHINE_OPTS="--xhyve-virtio-9p"' >> Profile
+echo 'export MACHINE_OPTS="--xhyve-experimental-nfs-share' >> Profile
 ```
 
 # tl;dr
