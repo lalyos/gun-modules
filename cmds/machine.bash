@@ -14,8 +14,8 @@ init() {
   env-import MACHINE_CPU 2
   env-import MACHINE_OPTS "--xhyve-virtio-9p"
 
-  deps-require docker-machine
-  deps-require docker-machine-driver-xhyve
+  deps-require docker-machine 0.8.2
+  deps-require docker-machine-driver-xhyve 0.3.1
   color-init
   }
 
