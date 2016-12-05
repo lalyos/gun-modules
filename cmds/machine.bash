@@ -9,7 +9,7 @@ init() {
   cmd-export machine-start
 
   env-import MACHINE_NAME cbd
-  env-import MACHINE_STORAGE_PATH .gun/machines
+  env-import MACHINE_STORAGE_PATH $HOME/.docker/machine
   env-import MACHINE_MEM 4096
   env-import MACHINE_CPU 2
   env-import MACHINE_OPTS "--xhyve-virtio-9p"
